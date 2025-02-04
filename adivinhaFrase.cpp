@@ -24,7 +24,7 @@ void exibirFraseOculta(const string &frase, const string &acertos) {
 int main(){
 
     string frase, acertos;
-    char tentativa;
+    char letra;
     
     escolherFrase(frase);
     
@@ -34,10 +34,10 @@ int main(){
         exibirFraseOculta(frase, acertos);
         
         cout << "Digite uma letra: ";
-        cin >> tentativa;
+        cin >> letra;
         
-        if (acertos.find(tentativa) == string::npos) {
-            acertos += tentativa;
+        if (acertos.find(letra) == string::npos) {
+            acertos += letra;
         }
         
         bool ganhaste = true;
