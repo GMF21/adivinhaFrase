@@ -1,0 +1,58 @@
+#include <iostream>
+
+using namespace std;
+
+void escolherFrase(string &frase){
+    cout << "insere a frase: ";
+    getline(cin, frase);
+
+}
+
+void exibirFraseOculta(const string &frase, const string &acertos) {
+    for (char c : frase) {
+        if (c == ' ') {
+            cout << " ";
+        } else if (acertos.find(c) != string::npos) {
+            cout << c;
+        } else {
+            cout << "_";
+        }
+    }
+    cout << endl;
+}
+
+int main(){
+
+    string frase, acertos;
+    char tentativa;
+    
+    escolherFrase(frase);
+    
+    cout << "Adivinhe a frase!" << endl;
+    
+    while (true) {
+        exibirFraseOculta(frase, acertos);
+        
+        cout << "Digite uma letra: ";
+        cin >> tentativa;
+        
+        if (acertos.find(tentativa) == string::npos) {
+            acertos += tentativa;
+        }
+        
+        bool ganhaste = true;
+        for (char c : frase) {
+            if (c != ' ' && acertos.find(c) == string::npos) {
+                ganhaste = false;
+                break;
+            }
+        }
+        
+        if (ganhaste) {
+            cout << "Parabens!" << endl;
+            break;
+        }
+    }
+    return 0;
+    
+}
