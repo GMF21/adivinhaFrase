@@ -8,7 +8,7 @@ void escolherFrase(string &frase){
 
 }
 
-void exibirFraseOculta(const string &frase, const string &acertos) {
+void exibirFraseOculta(string &frase, string &acertos) {
     for (char c : frase) {
         if (c == ' ') {
             cout << " ";
