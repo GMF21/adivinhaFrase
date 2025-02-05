@@ -21,6 +21,7 @@ void exibirFraseOculta(string &frase, string &acertos) {
     cout << endl;
 }
 
+
 int main(){
 
     string frase, acertos;
