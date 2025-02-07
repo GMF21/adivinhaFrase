@@ -2,10 +2,9 @@
 
 using namespace std;
 
-void escolherFrase(string &frase){
-    cout << "insere a frase: ";
+void escolherFrase(string &frase) {
+    cout << "Insere a frase: ";
     getline(cin, frase);
-
 }
 
 void exibirFraseOculta(string &frase, string &acertos) {
@@ -21,12 +20,10 @@ void exibirFraseOculta(string &frase, string &acertos) {
     cout << endl;
 }
 
-
-int main(){
-
+int main() {
     string frase, acertos;
     char letra;
-    
+
     escolherFrase(frase);
     
     cout << "Adivinhe a frase!" << endl;
@@ -40,20 +37,7 @@ int main(){
         if (acertos.find(letra) == string::npos) {
             acertos += letra;
         }
-        
-        bool ganhaste = true;
-        for (char c : frase) {
-            if (c != ' ' && acertos.find(c) == string::npos) {
-                ganhaste = false;
-                break;
-            }
-        }
-        
-        if (ganhaste) {
-            cout << "Parabens!" << endl;
-            break;
-        }
     }
+
     return 0;
-    
 }
